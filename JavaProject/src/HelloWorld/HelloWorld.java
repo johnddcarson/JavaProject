@@ -12,14 +12,28 @@ public class HelloWorld {
 		} else {
 			System.out.println("It is an Alien!!");
 		}
-		
+
 		int topScore = 100;
-		
-		if(topScore == 100) {
+
+		if (topScore == 100) {
 			System.out.println("You got the high score");
-		}else {
+		} else {
 			System.out.println("You will need to try again to get the high score");
 		}
+
+		int newValue = 50;
+		if (newValue == 50) {
+			System.out.println("This is true");
+		}
+
+		boolean isCar = false;
+		if (!isCar) {
+			System.out.println("This is not supposed to happen");
+		}
+		String makeOfCar = "VW";
+		boolean isDomestic = (makeOfCar == "VW") ? true : false;
+
+		System.out.println("Is the car VW" + " " + isDomestic);
 
 	}
 
