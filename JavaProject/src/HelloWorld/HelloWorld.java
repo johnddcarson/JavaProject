@@ -8,17 +8,17 @@ public class HelloWorld {
 		boolean isAlien = true;
 
 		if (isAlien) {
-			System.out.println("It is not an Alien");
+			System.out.println("It is not an Alien!!");
 		} else {
-			System.out.println("It is an Alien");
+			System.out.println("It is an Alien!!");
 		}
 		
 		int topScore = 100;
 		
-		if(topScore != 100) {
+		if(topScore == 100) {
 			System.out.println("You got the high score");
 		}else {
-			System.out.println("Are you stupid");
+			System.out.println("You will need to try again to get the high score");
 		}
 
 	}
