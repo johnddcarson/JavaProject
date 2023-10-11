@@ -3,7 +3,7 @@ package HelloWorld;
 public class HelloWorld {
 
 	public static void main(String[] args) {
-		System.out.println("Hello World, John");
+		System.out.println("Hello World, John this is the start of somthing new");
 
 		boolean isAlien = true;
 
