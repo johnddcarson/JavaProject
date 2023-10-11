@@ -10,7 +10,7 @@ public class Section4 {
 		double remainder = calDoubleVar % 40;
 		boolean isremainder = remainder == 0.00 ? true : false;
 
-		System.out.println(isremainder);
+		System.out.println(isremainder + " " + calDoubleVar + " " + remainder);
 
 		String remainderText = !isremainder ? "Got a Remainder" : "No Remainder";
 
