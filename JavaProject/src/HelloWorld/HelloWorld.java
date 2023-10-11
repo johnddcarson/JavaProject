@@ -18,7 +18,7 @@ public class HelloWorld {
 		if(topScore != 100) {
 			System.out.println("You got the high score");
 		}else {
-			System.out.println("Are you stupid");
+			System.out.println("You will need to try again to get the high score");
 		}
 
 	}
