@@ -12,7 +12,7 @@ public class Section4 {
 
 		System.out.println(isremainder + " " + calDoubleVar + " " + remainder);
 
-		String remainderText = !isremainder ? "Got a Remainder" : "No Remainder";
+		String remainderText = !isremainder ? "Got a Remainder!" : "No Remainder!";
 
 		System.out.println(remainderText);
 
