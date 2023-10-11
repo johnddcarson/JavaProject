@@ -31,7 +31,7 @@ public class Section5 {
 		boolean gameOver = true;
 		int score = 800;
 		int levelCompleted = 5;
-		int bonus = 100;
+		int bonus = 200;
 
 		int finalScore = 0;
 
