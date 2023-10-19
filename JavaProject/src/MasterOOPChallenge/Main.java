@@ -21,13 +21,21 @@ public class Main {
 		// System.out.println(burger.getBasePrice());
 		// System.out.println(burger.getAdjustedPrice());
 
-		MealOrder regMealOrder = new MealOrder();
-		regMealOrder.printItemizedList();
+		/*
+		 * MealOrder regMealOrder = new MealOrder(); regMealOrder.printItemizedList();
+		 */
 
 		MealOrder johnMealOrder = new MealOrder("Regular", "Coke", "Chips");
 		johnMealOrder.addBurgerToppings("BACON", "cheese", "");
 		johnMealOrder.setDrinkSize("Large");
 		johnMealOrder.printItemizedList();
+
+		MealOrder jcMealOrder = new MealOrder("Deluxe", "Coke", "Chips");
+		// jcMealOrder.printItemizedList();
+		jcMealOrder.addBurgerToppings("BACON", "Cheese", "SALAMI", "AVOCADO", "");
+		jcMealOrder.printItemizedList();
+		jcMealOrder.setDrinkSize("Large");
+		jcMealOrder.printItemizedList();
 
 	}
 

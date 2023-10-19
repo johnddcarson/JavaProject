@@ -39,16 +39,24 @@ public class Item {
 		return size;
 	}
 
+	public String getType() {
+		return type;
+	}
+
 	public void setSize(String size) {
 		this.size = size;
 	}
 
 	public static void printItem(String name, double price) {
-		System.out.printf("%1s:%6.2f%n", name, price);
+		System.out.printf("%-20s:%8.2f%n", name, price);
 	}
 
 	public void printItem() {
-		printItem(getName(), getAdjustedPrice());
+		if (getName().equals("DRINK") || getName().equals("SIDE")) {
+			printItem(getName() + " " + getType(), getAdjustedPrice());
+		} else {
+			printItem(getName(), getAdjustedPrice());
+		}
 	}
 
 }

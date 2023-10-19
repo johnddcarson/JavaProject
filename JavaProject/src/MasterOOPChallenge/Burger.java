@@ -32,15 +32,23 @@ public class Burger extends Item {
 	}
 
 	public void addToppings(String extra1, String extra2, String extra3) {
-
-		this.extra1 = new Item("TOPPING", extra1, getExtraPrice(extra1));
-		this.extra2 = new Item("TOPPING", extra2, getExtraPrice(extra2));
-		this.extra3 = new Item("TOPPING", extra3, getExtraPrice(extra3));
+		if (!extra1.isEmpty()) {
+			this.extra1 = new Item("TOPPING " + extra1, extra1, getExtraPrice(extra1));
+		}
+		if (!extra2.isEmpty()) {
+			this.extra2 = new Item("TOPPING " + extra2, extra2, getExtraPrice(extra2));
+		}
+		if (!extra3.isEmpty()) {
+			this.extra3 = new Item("TOPPING " + extra3, extra3, getExtraPrice(extra3));
+		}
 	}
 
 	public void printItemizedList() {
-
-		printItem("BASE BURGER", getBasePrice());
+		String className = getClass().getSimpleName();
+		if (className.length() > 6) {
+			className = className.substring(0, 6) + " " + className.substring(6);
+		}
+		printItem(className, getBasePrice());
 		if (extra1 != null) {
 			extra1.printItem();
 		}
