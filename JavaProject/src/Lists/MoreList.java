@@ -45,6 +45,12 @@ public class MoreList {
 		dog.sort(Comparator.reverseOrder());
 		System.out.println(dog);
 
+		String[] arrayArrayList = new String[] { "John", "Heather" };
+		System.out.println(Arrays.toString(arrayArrayList));
+
+		var newArrayList = Arrays.asList(arrayArrayList);
+		System.out.println(newArrayList);
+
 	}
 
 }
