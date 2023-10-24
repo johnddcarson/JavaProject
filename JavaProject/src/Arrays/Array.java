@@ -52,7 +52,7 @@ public class Array {
 		int j = 20;
 		System.out.println(j % 10 + " Module");
 
-		int[] randomArray = getRandomArray(30);
+		int[] randomArray = getRandomArray(2500000);
 		int index = 0;
 		System.out.println(Arrays.toString(randomArray));
 		Arrays.sort(randomArray);
