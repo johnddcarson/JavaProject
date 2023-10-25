@@ -12,7 +12,7 @@ public class Cat extends Animal {
 
 	@Override
 	public void move() {
-		System.out.println("The " + getClass().getName() + " " + getNameString()
+		System.out.println("The " + getExplicitType() + " " + getNameString()
 				+ " meows, chirrups, hisses, while moving and it's age is " + anmialAge);
 
 	}
