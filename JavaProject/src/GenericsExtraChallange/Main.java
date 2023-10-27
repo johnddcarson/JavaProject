@@ -1,4 +1,4 @@
-package GenericsExtra;
+package GenericsExtraChallange;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,31 +18,14 @@ public class Main {
 		for (int i = 0; i < 10; i++) {
 			lpaStudents.add(new LPAStudent());
 		}
-		printList(lpaStudents);
-
-		List<BehaviourStudent> behaviourStudents = new ArrayList<>();
-		for (int i = 0; i < 10; i++) {
-			behaviourStudents.add(new BehaviourStudent());
-		}
-
-		printList(behaviourStudents);
-
-		testList(new ArrayList<String>(List.of("Able", "Barry", "Charlie")));
-		testList(new ArrayList<Integer>(List.of(1, 2, 3)));
-
-		System.out.println("-".repeat(70));
-
-		// var queryList = new QueryList<>(lpaStudents);
-		var matches = QueryList.getMatxhes(students, "Course", "Python");
-
-		printList(matches);
+		// printList(lpaStudents);
 
 	}
 
 	public static void printList(List<? extends Student> students) {
 
 		for (var student : students) {
-			System.out.println(student.getYearStarted() + " " + student);
+			System.out.println(student);
 			System.out.println("-".repeat(70));
 		}
 		Class<?> studentClass = students.get(0).getClass(); // Get the class of the first student
