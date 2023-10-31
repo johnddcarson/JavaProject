@@ -15,6 +15,9 @@ public class Main {
 
 		Calculator2(Integer::sum, 10, 5);
 
+		Calculator2((s1, s2) -> s1 + s2, "Hello", "World");
+		Calculator2(String::concat, "Hello", "World");
+
 	}
 
 	public static <T> T Calculator2(BinaryOperator<T> function, T value1, T value2) {
