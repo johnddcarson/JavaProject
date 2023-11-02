@@ -1,4 +1,4 @@
-package HashChallange;
+package MapInterface;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -19,7 +19,6 @@ public class Contact {
 
 	public Contact(String name, long phone) {
 		this(name, null, phone);
-
 	}
 
 	public Contact(String name, String email, long phone) {
@@ -29,22 +28,37 @@ public class Contact {
 		}
 		if (phone > 0) {
 			String p = String.valueOf(phone);
+			p = "(%s) %s-%s".formatted(p.substring(0, 3), p.substring(3, 6), p.substring(6));
 			phones.add(p);
 		}
-
 	}
 
-	protected String getName() {
+	public String getName() {
 		return name;
 	}
 
 	@Override
 	public String toString() {
-		return "Contact [name=" + name + ", emails=" + emails + ", phones=" + phones + "]";
+		return "%s: %s %s".formatted(name, emails, phones);
+	}
+
+	public Contact mergeContactData(Contact contact) {
+
+		Contact newContact = new Contact(name);
+		newContact.emails = new HashSet<>(this.emails);
+		newContact.phones = new HashSet<>(this.phones);
+		newContact.emails.addAll(contact.emails);
+		newContact.phones.addAll(contact.phones);
+		return newContact;
 	}
 
 	@Override
 	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+
 		Contact contact = (Contact) o;
 
 		return getName().equals(contact.getName());
@@ -55,29 +69,16 @@ public class Contact {
 		return 33 * getName().hashCode();
 	}
 
-	public Contact merContactData(Contact contact) {
-
-		Contact newContact = new Contact(name);
-		newContact.emails = new HashSet<>(this.emails);
-		newContact.phones = new HashSet<>(this.phones);
-		newContact.emails.addAll(contact.emails);
-		newContact.phones.addAll(contact.phones);
-
-		return newContact;
-	}
-
 	public void addEmail(String companyName) {
 
 		String[] names = name.split(" ");
-		String email = names[0].toLowerCase() + "." + names[1].toLowerCase() + "@" + companyName.toLowerCase() + ".com";
-
-		emails.add(email);
-
-	}
-
-	public void addphone(String number) {
-
-		phones.add(number);
+		String email = "%c%s@%s.com".formatted(name.charAt(0), names[names.length - 1],
+				companyName.replaceAll(" ", "").toLowerCase());
+		if (!emails.add(email)) {
+			System.out.println(name + " already has email " + email);
+		} else {
+			System.out.println(name + " now has email " + email);
+		}
 	}
 
 	public void replaceEmailIfExists(String oldEmail, String newEmail) {
@@ -87,5 +88,4 @@ public class Contact {
 			emails.add(newEmail);
 		}
 	}
-
 }

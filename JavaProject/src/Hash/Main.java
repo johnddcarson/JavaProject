@@ -9,6 +9,27 @@ import java.util.Set;
 public class Main {
 
 	public static void main(String[] args) {
+
+		Set<String> boyNames = new HashSet<>();
+		Set<String> boyNames2 = new HashSet<>();
+
+		boyNames.addAll(Arrays.asList("John", "Jack", "James"));
+		boyNames2.addAll(Arrays.asList("John", "Jack", "James", "Peter", "Roma", "Tiernan"));
+		boyNames.forEach(System.out::println);
+		System.out.println();
+		boyNames2.forEach(System.out::println);
+
+		Set<String> uniboyNames = new HashSet<>();
+		System.out.println();
+		uniboyNames.addAll(boyNames);
+		uniboyNames.addAll(boyNames2);
+		uniboyNames.forEach(System.out::println);
+
+		Set<String> retainNames = new HashSet<>();
+		System.out.println();
+		retainNames.retainAll(boyNames);
+		retainNames.retainAll(boyNames2);
+		retainNames.forEach(System.out::println);
 		/*
 		 * String atext = "Hello"; String btext = "hello"; String ctext =
 		 * String.join("l", "He", "lo"); String dtext = "He".concat("llO");
