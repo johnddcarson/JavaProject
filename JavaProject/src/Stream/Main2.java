@@ -26,6 +26,10 @@ public class Main2 {
 
 		stream.forEach(System.out::println);
 
+		int three = 3;
+		String four = "4";
+		System.out.println(1 + 2 + three + four);
+
 	}
 
 }
