@@ -13,6 +13,7 @@ public class Animal {
 
 	public boolean canHop() {
 		return canHop;
+
 	}
 
 	public boolean canSwim() {
